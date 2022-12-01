@@ -2,7 +2,11 @@ import "./RecipeList.css"
 import { NavLink } from "react-router-dom";
 import React from 'react'
 
-export const RecipeList = ({recipes}) => {
+export default function RecipeList({recipes}){
+
+    if (recipes.length === 0){
+        return <div className="error">No recipe to load...</div>
+    }
   return (
     <div className="recipe-list">
         {recipes.map((recipe) =>(
