@@ -25,6 +25,9 @@ const Home = () => {
           setData(result)
           setIsPending(false)
         }
+      }).catch(err => {
+        setError(err.message)
+        setIsPending(false)
       })
 
     },[])
